@@ -33,10 +33,12 @@ def main() -> None:
     # Строки для компиляции:
     if True:
         avrdud       = f"\"{os.path.split(__file__)[0]}/{avrdude}/avrdude\""
-        avrdud_flags = f"-C {avrdude}/avrdude.conf -v -p{device} -c avr109"
+        avrdud_flags = f"-C {avrdude}/avrdude.conf -v -p {device} -c avr109 -P {upload_port} -b {b}"
 
     if os.path.isfile(f"out/{out_name}.hex"):
         # Перетыкаем порт с ардуинкой для прошивки:
+        # TODO: переделать. Сделать чтобы сначала проверялся что указанный порт существует и является ардуиной,
+        # а после его отключение, включение, и повторный поиск но по имени ардуино. А после, возврат порта.
         if True:
             ser = serial.Serial(port, 1200)
             ser.close()
@@ -55,8 +57,9 @@ def main() -> None:
                 time.sleep(1)
             print(f"The upload port was found on: {upload_port}\n")
 
-        print(f"{avrdud} {avrdud_flags} -P{upload_port} -b {b} -D -U flash:w:out/{out_name}.hex:i")
-        os.system(f"{avrdud} {avrdud_flags} -P{upload_port} -b {b} -D -U flash:w:out/{out_name}.hex:i")
+        upload_avrdude = f"{avrdud} {avrdud_flags} -D -U flash:w:out/{out_name}.hex:i"
+        print(upload_avrdude)
+        os.system(upload_avrdude)
 
 
 # Если этот файл запускают:

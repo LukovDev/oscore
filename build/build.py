@@ -89,15 +89,16 @@ def main() -> None:
     if True:
         print("\n\n┌─── Linking Files: ────────────────────────────────────────────")
         # Создаём .elf файл:
-        objects = []
+        if True:
+            objects = []
 
-        # Получаем список .o файлов:
-        for file in os.listdir("tmp/"):
-            if os.path.isfile(os.path.join("tmp/", file)) and file.endswith('.o'):
-                objects.append(f"tmp/{file}")
+            # Получаем список .o файлов:
+            for file in os.listdir("tmp/"):
+                if os.path.isfile(os.path.join("tmp/", file)) and file.endswith('.o'):
+                    objects.append(f"tmp/{file}")
 
-        o_files = " ".join([os.path.splitext(obj)[0] + ".o" for obj in objects])
-        os.system(f"{compil} {flags} -o out/{out_name}.elf {o_files} tools/core.a")
+            o_files = " ".join([os.path.splitext(obj)[0] + ".o" for obj in objects])
+            os.system(f"{compil} {flags} -o out/{out_name}.elf {o_files}")
         shutil.rmtree("tmp")  # Удаляем tmp папку, т.к. она нам больше не нужна.
         print("│\n└───────────────────────────────────────────────────────────────")
 
