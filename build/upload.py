@@ -32,8 +32,8 @@ def main() -> None:
 
     # Строки для компиляции:
     if True:
-        avrdud       = f"\"{os.path.split(__file__)[0]}/{avrdude}/bin/avrdude\""
-        avrdud_flags = f"-C {avrdude}/etc/avrdude.conf -v -p{device} -c avr109"
+        avrdud       = f"\"{os.path.split(__file__)[0]}/{avrdude}/avrdude\""
+        avrdud_flags = f"-C {avrdude}/avrdude.conf -v -p{device} -c avr109"
 
     if os.path.isfile(f"out/{out_name}.hex"):
         # Перетыкаем порт с ардуинкой для прошивки:
