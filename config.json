@@ -1,0 +1,6 @@
+{
+    "device": "atmega32u4",
+    "port": "COM5",
+    "clock": 16000000,
+    "-b": 57600
+}

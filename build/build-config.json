@@ -1,0 +1,6 @@
+{
+    "output-name": "oscore",
+    "avr":         "/build/tools/avr/1.8.6/",
+    "avr-gcc":     "/build/tools/avr-gcc/",
+    "avrdude":     "/build/tools/avrdude/"
+}
