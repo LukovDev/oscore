@@ -3,5 +3,6 @@
 //
 
 
+// FUNCTIONS:
 void setup();  // Один раз.
 void loop();   // Цикл.

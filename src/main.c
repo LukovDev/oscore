@@ -4,7 +4,7 @@
 
 
 // INCLUDES:
-#include "core/core.h"
+#include "core/lib.h"
 
 
 // DEFINES:
