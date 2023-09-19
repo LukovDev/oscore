@@ -1,8 +1,8 @@
 @echo off
 
 echo -------------------------------------------- BUILD: --------------------------------------------
-cd .\build\
-".\tools\python\Scripts\python" build.py
+cd .\build\tools\
+".\python\Scripts\python" build.py
 echo ------------------------------------------------------------------------------------------------
 
 echo.

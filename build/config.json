@@ -1,0 +1,14 @@
+{
+    "config": {
+        "device":            "atmega32u4",
+        "port":              "COM5",
+        "clock":             16000000,
+        "serial-port-speed": 57600
+    },
+
+    "build-config": {
+        "output-file-name": "oscore",
+        "avr-gcc":          "/build/tools/avr-gcc/",
+        "avrdude":          "/build/tools/avrdude/"
+    }
+}
