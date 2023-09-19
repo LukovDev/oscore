@@ -4,4 +4,4 @@
 
 
 // FUNCTIONS:
-void delay(double ms);  // Функция задержки времени.
+void delay(unsigned long ms);  // Функция задержки времени.

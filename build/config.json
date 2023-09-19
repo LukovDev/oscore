@@ -8,7 +8,12 @@
 
     "build-config": {
         "output-file-name": "oscore",
+        "avrdude":          "/build/tools/avrdude/",
         "avr-gcc":          "/build/tools/avr-gcc/",
-        "avrdude":          "/build/tools/avrdude/"
+        "avr-gcc-flags": [
+            "-ffunction-sections", "-fdata-sections",
+            "-fpermissive", "-fno-exceptions",
+            "-Wall", "-Wextra", "-Os", "-flto"
+        ]
     }
 }

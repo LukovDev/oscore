@@ -34,18 +34,23 @@ def main() -> None:
 
     # Получение путей инструментов и прочих данных:
     if True:
-        device   = f"{conf['config']['device']}"
-        clock    = f"{conf['config']['clock']}"
-        out_name = f"{conf['build-config']['output-file-name']}"
-        avr_gcc  = f"{to_return}/{conf['build-config']['avr-gcc']}"
+        device    = f"{conf['config']['device']}"
+        clock     = f"{conf['config']['clock']}"
+        out_name  = f"{conf['build-config']['output-file-name']}"
+        avr_gcc   = f"{to_return}/{conf['build-config']['avr-gcc']}"
+        gcc_flags = conf["build-config"]["avr-gcc-flags"]
+
+        # Преобразование gcc флагов:
+        flags = ""
+        for flag in gcc_flags: flags += f"{flag} "
+        gcc_flags = flags
 
         # main_file = f"../{build_conf['main-file']}"
         # c_files = [main_file]
 
     # Строки для компиляции:
     if True:
-        flags = f"-Wall -fpermissive -fno-exceptions -ffunction-sections " \
-                f"-fdata-sections -Os -DF_CPU={clock} -mmcu={device} -I {to_return}\\core\\includes\\"
+        flags = f"{gcc_flags} -DF_CPU={clock} -mmcu={device} -I {to_return}\\core\\includes\\"
         compil = f"\"{os.path.split(__file__)[0]}/{avr_gcc}/bin/avr-g++\""
         objcop = f"\"{os.path.split(__file__)[0]}/{avr_gcc}/bin/avr-objcopy\""
         avrsiz = f"\"{os.path.split(__file__)[0]}/{avr_gcc}/bin/avr-size\""

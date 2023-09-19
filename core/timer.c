@@ -9,7 +9,7 @@
 
 
 // Функция задержки времени:
-void delay(double ms) {
+void delay(unsigned long ms) {
     while (0 < ms) {
         _delay_ms(1);
         ms--;
