@@ -3,28 +3,24 @@
 //
 
 
-#ifdef TYPES_H
-#define TYPES_H
+#ifndef _TYPES_H
+#define _TYPES_H
+
+// Прочие типы данных:
+typedef char           byte;
+typedef unsigned char  uchar;
+typedef unsigned short ushort;
+typedef unsigned long  ulong;
 
 // bool поддержка:
 #define true  1
 #define false 0
-typedef enum {false, true} bool;
+
+#ifndef bool
+#define bool byte
+#endif
 
 // null поддержка:
 #define null undefined
-
-#endif
-
-
-/* ---------------------------------------------------------------- */
-
-
-#ifndef TYPES_H
-#define TYPES_H
-
-// Прочие типы данных:
-typedef unsigned char uchar;
-typedef unsigned short ushort;
 
 #endif

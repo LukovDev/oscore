@@ -18,9 +18,15 @@ def main() -> None:
 
     # Получение путей инструментов и прочих данных:
     if True:
-        device   = f"{conf['config']['device']}"
-        out_name = f"{conf['build-config']['output-file-name']}"
-        avr_gcc  = f"{to_return}/{conf['build-config']['avr-gcc']}"
+        device        = f"{conf['config']['device']}"
+        out_name      = f"{conf['build-config']['output-file-name']}"
+        avr_gcc       = f"{to_return}/{conf['build-config']['avr-gcc']}"
+        objdump_flags = conf["objdump-flags"]
+
+        # Преобразование флагов:
+        flags = ""
+        for flag in objdump_flags: flags += f"{flag} "
+        objdump_flags = flags
 
     # Строки для компиляции:
     if True:
@@ -28,7 +34,7 @@ def main() -> None:
         avrsiz = f"\"{os.path.split(__file__)[0]}/{avr_gcc}/bin/avr-size\""
 
     # Выводим дамп файла:
-    os.system(f"{objdmp} -d {to_return}/build/out/{out_name}.elf")
+    os.system(f"{objdmp} {objdump_flags} {to_return}/build/out/{out_name}.elf")
     print("\n\n")
 
     # Выводим размер итогового файла:

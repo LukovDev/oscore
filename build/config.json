@@ -15,5 +15,9 @@
             "-fpermissive", "-fno-exceptions",
             "-Wall", "-Wextra", "-Os", "-flto"
         ]
-    }
+    },
+
+    "objdump-flags": [
+        "-d"
+    ]
 }

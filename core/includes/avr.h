@@ -3,6 +3,11 @@
 //
 
 
+#ifndef _AVR_H
+#define _AVR_H
+
 // INCLUDES:
 #include <avr/io.h>
 #include <util/delay.h>
+
+#endif

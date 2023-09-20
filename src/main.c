@@ -5,6 +5,7 @@
 
 // INCLUDES:
 #include <lib.h>
+#include "func.h"
 
 
 // DEFINES:
@@ -19,9 +20,9 @@ void setup() {
 
 // Цикл:
 void loop() {
-    digital_write(LED_PIN, true);  // Включаем светодиод.
-    delay(500);                    // Пауза 1/2 сек.
+    turn_on(LED_PIN);   // Включаем светодиод.
+    delay(500);         // Пауза 1/2 сек.
 
-    digital_write(LED_PIN, false); // Выключаем светодиод.
-    delay(500);                    // Пауза 1/2 сек.
+    turn_off(LED_PIN);  // Выключаем светодиод.
+    delay(500);         // Пауза 1/2 сек.
 }

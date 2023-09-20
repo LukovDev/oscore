@@ -3,6 +3,9 @@
 //
 
 
+#ifndef _PINS_H
+#define _PINS_H
+
 // DEFINES:
 #define INPUT  0  // Вход.
 #define OUTPUT 1  // Выход.
@@ -16,3 +19,5 @@ uchar digital_read(uchar pin);              // Функция чтения из 
 
 void analog_write(uchar pin, uchar value);  // Функция записи в аналоговый выходной пин (PWM).
 ushort analog_read(uchar pin);              // Функция чтения значения аналогового входа.
+
+#endif

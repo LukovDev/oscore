@@ -80,10 +80,10 @@ def main() -> None:
         
         # Проходимся по списку файлов .c в папке src:
         for filepath in c_files:
-            print(f"│\n├─ Compiling -> {filepath}")
+            print(f"│\n├─ Compiling -> {filepath[len(to_return):]}")
             o_f = f"{to_return}/build/tmp/{os.path.splitext(os.path.basename(filepath))[0]+'.o'}"
             os.system(f"{compil} {flags} -c {filepath} -o {o_f}")
-            print(f"├─ Output -> {o_f}")
+            print(f"├─ Output -> {o_f[len(to_return):]}")
 
         # os.system("{} -x assembler-with-cpp -c {} -o {}.o".format(COMPILE, file, os.path.splitext(file)[0]))
         print("│\n└───────────────────────────────────────────────────────────────")

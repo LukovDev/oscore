@@ -3,5 +3,10 @@
 //
 
 
+#ifndef _TIMER_H
+#define _TIMER_H
+
 // FUNCTIONS:
-void delay(unsigned long ms);  // Функция задержки времени.
+void delay(ulong ms);  // Функция задержки времени.
+
+#endif
